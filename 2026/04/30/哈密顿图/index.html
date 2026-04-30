@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>zlhahaha | zlhahaha</title><meta name="author" content="Wonderful"><meta name="copyright" content="Wonderful"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="定理15.6(无向哈密顿图的必要条件)没问题，我们完全跳过枯燥的数学推导，用一个“破坏游戏”的形象思维来理解它。 这个定理（汉密尔顿图的必要条件）其实是在教你如何通过“搞破坏”来一眼看穿某个图是不是“冒牌货”。  1. 形象比喻：朋友圈手拉手首先，记住我们对汉密尔顿图的定义：它包含一个大圈，能把所有点都串起来。 想象一群人在操场上站着：  如果这是一个汉密尔顿图，说明这些人哪怕内部关系再乱，他们一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="zlhahaha">
+<meta property="og:url" content="https://zlhahaha.github.io/2026/04/30/%E5%93%88%E5%AF%86%E9%A1%BF%E5%9B%BE/index.html">
+<meta property="og:site_name" content="zlhahaha">
+<meta property="og:description" content="定理15.6(无向哈密顿图的必要条件)没问题，我们完全跳过枯燥的数学推导，用一个“破坏游戏”的形象思维来理解它。 这个定理（汉密尔顿图的必要条件）其实是在教你如何通过“搞破坏”来一眼看穿某个图是不是“冒牌货”。  1. 形象比喻：朋友圈手拉手首先，记住我们对汉密尔顿图的定义：它包含一个大圈，能把所有点都串起来。 想象一群人在操场上站着：  如果这是一个汉密尔顿图，说明这些人哪怕内部关系再乱，他们一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://zlhahaha.github.io/img/butterfly-icon.png">
+<meta property="article:published_time" content="2026-04-30T02:37:15.068Z">
+<meta property="article:modified_time" content="2025-12-16T12:19:17.099Z">
+<meta property="article:author" content="Wonderful">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://zlhahaha.github.io/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "url": "https://zlhahaha.github.io/2026/04/30/%E5%93%88%E5%AF%86%E9%A1%BF%E5%9B%BE/",
+  "image": "https://zlhahaha.github.io/img/butterfly-icon.png",
+  "datePublished": "2026-04-30T02:37:15.068Z",
+  "dateModified": "2025-12-16T12:19:17.099Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Wonderful",
+      "url": "https://zlhahaha.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://zlhahaha.github.io/2026/04/30/%E5%93%88%E5%AF%86%E9%A1%BF%E5%9B%BE/index.html"><link rel="preconnect" href="//unpkg.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://unpkg.com/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'zlhahaha',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><link rel="stylesheet" href="/css/bg_blur.css"><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background-image: url(/img/background.jpg);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">zlhahaha</span></a><a class="nav-page-title" href="/"><span class="site-name">zlhahaha</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">无标题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2026-04-30T02:37:15.068Z" title="发表于 2026-04-30 10:37:15">2026-04-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-12-16T12:19:17.099Z" title="更新于 2025-12-16 20:19:17">2025-12-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="定理15-6-无向哈密顿图的必要条件"><a href="#定理15-6-无向哈密顿图的必要条件" class="headerlink" title="定理15.6(无向哈密顿图的必要条件)"></a>定理15.6(无向哈密顿图的必要条件)</h2><p>没问题，我们完全跳过枯燥的数学推导，用一个<strong>“破坏游戏”</strong>的形象思维来理解它。</p>
+<p>这个定理（汉密尔顿图的必要条件）其实是在教你<strong>如何通过“搞破坏”来一眼看穿某个图是不是“冒牌货”</strong>。</p>
+<hr>
+<h3 id="1-形象比喻：朋友圈手拉手"><a href="#1-形象比喻：朋友圈手拉手" class="headerlink" title="1. 形象比喻：朋友圈手拉手"></a>1. 形象比喻：朋友圈手拉手</h3><p>首先，记住我们对<strong>汉密尔顿图</strong>的定义：<strong>它包含一个大圈，能把所有点都串起来</strong>。</p>
+<p>想象一群人在操场上站着：</p>
+<ul>
+<li><p>如果这是一个<strong>汉密尔顿图</strong>，说明这些人哪怕内部关系再乱，他们一定能找出一个<strong>大圆圈</strong>，所有人手拉手围成一圈（每个人都只拉两只手，一个左手一个右手）。</p>
+</li>
+<li><p>图里的其他边，就像是圆圈内部有些人还互相牵着额外的绳子。</p>
+</li>
+</ul>
+<h3 id="2-破坏规则：炸掉几个点"><a href="#2-破坏规则：炸掉几个点" class="headerlink" title="2. 破坏规则：炸掉几个点"></a>2. 破坏规则：炸掉几个点</h3><p>现在的定理 $p(G - V_1) \le |V_1|$ 其实是在描述一场破坏行动：</p>
+<ul>
+<li><p><strong>$V_1$（破坏者）</strong>：你从这个圆圈里选出几个人，把他们“炸掉”（也就是把这些点和连在它们身上的线统统移走）。假设你炸掉了 <strong>$k$</strong> 个人。</p>
+</li>
+<li><p><strong>$G - V_1$（残局）</strong>：炸完之后剩下的人。</p>
+</li>
+<li><p><strong>$p(G - V_1)$（碎片数）</strong>：剩下的人分成了几个互不联系的<strong>“孤岛”</strong>（连通分量）。</p>
+</li>
+</ul>
+<h3 id="3-直觉推演（为什么是-le-？）"><a href="#3-直觉推演（为什么是-le-？）" class="headerlink" title="3. 直觉推演（为什么是 $\le$ ？）"></a>3. 直觉推演（为什么是 $\le$ ？）</h3><p>想象那个最完美的<strong>大圆圈</strong>（汉密尔顿回路）：</p>
+<ol>
+<li><p>切香肠原理：</p>
+<p> 如果你有一根环形的香肠（大圆圈），你切 1 刀（拿掉 1 个点），它变成了一条线（还是 1 块）。</p>
+<p> 如果你切 2 刀（拿掉 2 个不相邻的点），它断成了 2 段。</p>
+<p> 如果你切 $k$ 刀（拿掉 $k$ 个不相邻的点），它最多只能断成 $k$ 段。</p>
+<ul>
+<li><strong>结论：</strong> 在最脆弱的圆圈上，<strong>碎片数量 $\le$ 砍掉的点数</strong>。</li>
+</ul>
+</li>
+<li><p>现实情况（图比圆圈更结实）：</p>
+<p> 真正的图（$G$）除了那个大圆圈，内部可能还有很多乱七八糟的连线。</p>
+<p> 当你砍掉 $k$ 个点时，圆圈虽然断了，但内部的连线可能会把断开的几段又藕断丝连地拉在一起。</p>
+<ul>
+<li><strong>最终结论：</strong> 既然连纯圆圈最多都只能断成 $k$ 段，那连线更多的图，断成的段数肯定<strong>更少或者相等</strong>。</li>
+</ul>
+</li>
+</ol>
+<p>所以公式就出来了：</p>
+<p>$$\text{碎片数量 (} p \text{)} \le \text{炸掉的点数 (} |V_1| \text{)}$$</p>
+<hr>
+<h3 id="4-这个定理怎么用？（考试必杀技）"><a href="#4-这个定理怎么用？（考试必杀技）" class="headerlink" title="4. 这个定理怎么用？（考试必杀技）"></a>4. 这个定理怎么用？（考试必杀技）</h3><p>这个定理通常不是用来证明“它是汉密尔顿图”的，而是用来<strong>打假</strong>的——<strong>证明它“不是”汉密尔顿图</strong>。</p>
+<p>操作步骤：</p>
+<p>如果你看一个图很不顺眼，觉得它没法一笔画走完所有点，你就试着找几个“关键点”把它们盖住（去掉）。</p>
+<ul>
+<li><p><strong>假如你只去掉了 2 个点，结果图一下子散成了 3 块（孤岛）。</strong></p>
+</li>
+<li><p>数学上：$3$ (碎片) $\le 2$ (去掉的点) —— <strong>这个不等式不成立！</strong></p>
+</li>
+<li><p><strong>结论：</strong> 它是冒牌货！这个图一定<strong>不是</strong>汉密尔顿图。</p>
+</li>
+</ul>
+<h3 id="举个经典的例子（蝴蝶结）"><a href="#举个经典的例子（蝴蝶结）" class="headerlink" title="举个经典的例子（蝴蝶结）"></a>举个经典的例子（蝴蝶结）</h3><p>想象两个三角形，中间共用一个顶点（像个蝴蝶结&#x2F;沙漏）。</p>
+<ol>
+<li><p><strong>搞破坏：</strong> 我们把中间那个公共顶点（1个点）挖掉。</p>
+</li>
+<li><p><strong>结果：</strong> 左边的三角形和右边的三角形彻底分家了，变成了 <strong>2</strong> 个孤立的部分。</p>
+</li>
+<li><p><strong>算一算：</strong></p>
+<ul>
+<li><p>去掉的点数 &#x3D; 1</p>
+</li>
+<li><p>剩下的碎片数 &#x3D; 2</p>
+</li>
+<li><p><strong>2 $\le$ 1 ？ 显然不成立！</strong></p>
+</li>
+</ul>
+</li>
+<li><p><strong>判定：</strong> 蝴蝶结图不是汉密尔顿图。（直觉也很对：你从左边走到右边，必须经过中心；想回左边，又得经过中心，中心就被走了两次，违规！）</p>
+</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>你不用管证明里的 $C$ 是什么。你只需要记住这个<strong>“破坏平衡判定法”</strong>：</p>
+<p>“如果你拿掉 $N$ 个点，图却碎成了比 $N$ 还多的块，那它绝对连不成一个完美的圈。”</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://zlhahaha.github.io">Wonderful</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://zlhahaha.github.io/2026/04/30/%E5%93%88%E5%AF%86%E9%A1%BF%E5%9B%BE/">https://zlhahaha.github.io/2026/04/30/%E5%93%88%E5%AF%86%E9%A1%BF%E5%9B%BE/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://zlhahaha.github.io" target="_blank">zlhahaha</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://unpkg.com/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://unpkg.com/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/02/26/hello-world/" title="Hello World"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">Hello World</div></div><div class="info-2"><div class="info-item-1">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;  More info: Writing Run server1$ hexo server  More info: Server Generate static files1$ hexo generate  More info: Generating Deploy to remote sites1$ hexo deploy  More info: Deployment </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Wonderful</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E7%90%8615-6-%E6%97%A0%E5%90%91%E5%93%88%E5%AF%86%E9%A1%BF%E5%9B%BE%E7%9A%84%E5%BF%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-number">1.</span> <span class="toc-text">定理15.6(无向哈密顿图的必要条件)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BD%A2%E8%B1%A1%E6%AF%94%E5%96%BB%EF%BC%9A%E6%9C%8B%E5%8F%8B%E5%9C%88%E6%89%8B%E6%8B%89%E6%89%8B"><span class="toc-number">1.1.</span> <span class="toc-text">1. 形象比喻：朋友圈手拉手</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%A0%B4%E5%9D%8F%E8%A7%84%E5%88%99%EF%BC%9A%E7%82%B8%E6%8E%89%E5%87%A0%E4%B8%AA%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">2. 破坏规则：炸掉几个点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%9B%B4%E8%A7%89%E6%8E%A8%E6%BC%94%EF%BC%88%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AF-le-%EF%BC%9F%EF%BC%89"><span class="toc-number">1.3.</span> <span class="toc-text">3. 直觉推演（为什么是 $\le$ ？）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%BF%99%E4%B8%AA%E5%AE%9A%E7%90%86%E6%80%8E%E4%B9%88%E7%94%A8%EF%BC%9F%EF%BC%88%E8%80%83%E8%AF%95%E5%BF%85%E6%9D%80%E6%8A%80%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">4. 这个定理怎么用？（考试必杀技）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BE%E4%B8%AA%E7%BB%8F%E5%85%B8%E7%9A%84%E4%BE%8B%E5%AD%90%EF%BC%88%E8%9D%B4%E8%9D%B6%E7%BB%93%EF%BC%89"><span class="toc-number">1.5.</span> <span class="toc-text">举个经典的例子（蝴蝶结）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.6.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/04/30/%E5%93%88%E5%AF%86%E9%A1%BF%E5%9B%BE/" title="无标题">无标题</a><time datetime="2026-04-30T02:37:15.068Z" title="发表于 2026-04-30 10:37:15">2026-04-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/26/hello-world/" title="Hello World">Hello World</a><time datetime="2025-02-26T14:24:38.427Z" title="发表于 2025-02-26 22:24:38">2025-02-26</time></div></div></div></div></div></div></main><footer id="footer" style="background: transparent;"><div id="footer-wrap"></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script src="/js/bg_blur.js"></script><script id="click-heart" src="https://unpkg.com/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
